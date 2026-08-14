@@ -14,7 +14,7 @@ import TextButton from "@/ds/ui/TextButton";
 import FetchStatusGate from "@/ds/biz/FetchStatusGate";
 import { SettingsRow, SettingsSection, Segmented } from "./primitives";
 
-function TabHeader({ title, description }: { title: string; description: string }) {
+function TabHeader({ title, description }: Readonly<{ title: string; description: string }>) {
   return (
     <header className="flex flex-col gap-1">
       <h2 className="typo-semiBold_h3 text-fg">{title}</h2>
@@ -209,8 +209,8 @@ export function SystemTab() {
               <SettingsRow label={t("settings.system.gpu")} alignTop>
                 <div className="flex flex-col items-end gap-0.5">
                   {info.gpus.length ? (
-                    info.gpus.map((gpu, i) => (
-                      <span key={i} className="typo-regular_smalllP text-fg-muted">
+                    info.gpus.map((gpu) => (
+                      <span key={gpu} className="typo-regular_smalllP text-fg-muted">
                         {gpu}
                       </span>
                     ))

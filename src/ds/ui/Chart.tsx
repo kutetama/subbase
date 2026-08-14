@@ -10,6 +10,14 @@ interface ChartProps {
   className?: string;
 }
 
+const createSpecialOption = (type: ChartType, values: number[], labels: string[]): EChartOption | undefined => {
+  if (type === 'donut') return { series: [{ type: 'pie', radius: ['50%', '72%'], data: values.map((value, index) => ({ value, name: labels[index] })) }] };
+  if (type === 'gauge') return { series: [{ type: 'gauge', progress: { show: true, width: 12 }, axisLine: { lineStyle: { width: 12 } }, data: [{ value: values[0] ?? 0 }], detail: { fontSize: 18 } }] };
+  return undefined;
+};
+
+const usesSecondSeries = (type: ChartType) => ['group-bar', 'group-line', 'stacked-line', 'bar-line'].includes(type);
+
 const Chart = ({
   type = 'bar',
   values = [42, 68, 51, 86, 73],
@@ -24,10 +32,9 @@ const Chart = ({
   };
   let option: EChartOption;
 
-  if (type === 'donut') {
-    option = { series: [{ type: 'pie', radius: ['50%', '72%'], data: values.map((value, index) => ({ value, name: labels[index] })) }] };
-  } else if (type === 'gauge') {
-    option = { series: [{ type: 'gauge', progress: { show: true, width: 12 }, axisLine: { lineStyle: { width: 12 } }, data: [{ value: values[0] ?? 0 }], detail: { fontSize: 18 } }] };
+  const specialOption = createSpecialOption(type, values, labels);
+  if (specialOption) {
+    option = specialOption;
   } else if (type === 'lollipop') {
     option = { ...axis, series: [{ type: 'bar', data: values, barWidth: 3, itemStyle: { color: '#1c6bff' } }, { type: 'scatter', data: values, symbolSize: 12, itemStyle: { color: '#1c6bff' } }] };
   } else {
@@ -37,7 +44,7 @@ const Chart = ({
       color: palette,
       series: [
         { type: line ? 'line' : 'bar', data: values, smooth: line, stack: type === 'stacked-line' ? 'total' : undefined, barMaxWidth: 24 },
-        ...(['group-bar', 'group-line', 'stacked-line', 'bar-line'].includes(type)
+        ...(usesSecondSeries(type)
           ? [{ type: type === 'bar-line' || line ? 'line' as const : 'bar' as const, data: secondaryValues, smooth: line, stack: type === 'stacked-line' ? 'total' : undefined, barMaxWidth: 24 }]
           : []),
       ],

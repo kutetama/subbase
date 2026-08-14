@@ -43,8 +43,8 @@ export default function AppShell() {
         </NavLink>
 
         <nav className="flex flex-1 flex-col gap-5 overflow-y-auto px-3 py-4 max-md:px-2">
-          {NAV_SECTIONS.map((section, i) => (
-            <div key={i} className="flex flex-col gap-1">
+          {NAV_SECTIONS.map((section) => (
+            <div key={section.titleKey ?? section.items[0]?.path} className="flex flex-col gap-1">
               {section.titleKey && !sidebarCompact && (
                 <span className="px-3 pb-1 typo-bold_overline uppercase tracking-wide text-fg-subtle max-md:hidden">
                   {t(section.titleKey)}

@@ -28,19 +28,23 @@ export function SettingsDialog() {
   const ActiveComponent = active.component;
 
   return (
-    <div
-      className="fixed inset-0 z-[9980] flex items-center justify-center bg-black/30 backdrop-blur-[2px]"
-      onMouseDown={closeSettings}
-      role="dialog"
+    <dialog
+      open
+      className="fixed inset-0 z-[9980] m-0 flex h-auto w-auto max-h-none max-w-none items-center justify-center border-0 bg-transparent p-0"
       aria-modal="true"
       aria-label={t("settings.title")}
     >
+      <button
+        type="button"
+        aria-label={t("settings.close")}
+        className="absolute inset-0 cursor-default border-0 bg-black/30 backdrop-blur-[2px]"
+        onClick={closeSettings}
+      />
       <div
         className={cn(
-          "flex h-[560px] w-[min(820px,calc(100vw-2rem))] overflow-hidden rounded-panel border border-line bg-surface shadow-basic",
+          "relative z-10 flex h-[560px] w-[min(820px,calc(100vw-2rem))] overflow-hidden rounded-panel border border-line bg-surface shadow-basic",
           "max-sm:h-dvh max-sm:w-dvw max-sm:flex-col max-sm:rounded-none",
         )}
-        onMouseDown={(e) => e.stopPropagation()}
       >
         <aside className="flex w-[216px] shrink-0 flex-col border-r border-line/60 bg-surface-page/40 p-3 max-sm:w-full max-sm:flex-row max-sm:items-center max-sm:overflow-x-auto max-sm:border-r-0 max-sm:border-b">
           <h2 className="px-2.5 pb-3 pt-2 typo-bold_P text-fg max-sm:hidden">{t("settings.title")}</h2>
@@ -79,6 +83,6 @@ export function SettingsDialog() {
           </div>
         </main>
       </div>
-    </div>
+    </dialog>
   );
 }

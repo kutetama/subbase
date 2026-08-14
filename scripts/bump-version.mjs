@@ -18,8 +18,10 @@ if (!["full", "major", "minor"].includes(level ?? "")) {
 const pkgPath = path.join(ROOT, "package.json");
 const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
 const [x, y, z] = pkg.version.split(".").map(Number);
-const next =
-  level === "full" ? `${x + 1}.0.0` : level === "major" ? `${x}.${y + 1}.0` : `${x}.${y}.${z + 1}`;
+let next;
+if (level === "full") next = `${x + 1}.0.0`;
+else if (level === "major") next = `${x}.${y + 1}.0`;
+else next = `${x}.${y}.${z + 1}`;
 
 // 오늘 날짜 (로컬)
 const today = new Date().toISOString().slice(0, 10);

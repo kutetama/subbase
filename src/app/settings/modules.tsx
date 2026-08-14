@@ -3,7 +3,7 @@
 import { useT } from "@/i18n";
 import { SettingsSection, SettingsRow } from "./primitives";
 
-function TabHeader({ title, description }: { title: string; description: string }) {
+function TabHeader({ title, description }: Readonly<{ title: string; description: string }>) {
   return (
     <header className="flex flex-col gap-1">
       <h2 className="typo-semiBold_h3 text-fg">{title}</h2>

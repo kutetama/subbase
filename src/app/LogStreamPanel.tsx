@@ -16,12 +16,15 @@ interface Props {
   maxLines?: number;
 }
 
-export default function LogStreamPanel({ path, className, maxLines = 2000 }: Props) {
-  const [lines, setLines] = useState<string[]>([]);
+type LogLine = { id: number; text: string };
+
+export default function LogStreamPanel({ path, className, maxLines = 2000 }: Readonly<Props>) {
+  const [lines, setLines] = useState<LogLine[]>([]);
   const [conn, setConn] = useState<ConnState>("closed");
   const [epoch, setEpoch] = useState(0); // 재연결 트리거
   const scrollRef = useRef<HTMLDivElement>(null);
   const pinnedRef = useRef(true); // 맨 아래 고정 여부
+  const lineIdRef = useRef(0);
 
   useEffect(() => {
     setLines([]);
@@ -30,7 +33,7 @@ export default function LogStreamPanel({ path, className, maxLines = 2000 }: Pro
       onOpen: () => setConn("open"),
       onMessage: (data) =>
         setLines((prev) => {
-          const next = [...prev, data];
+          const next = [...prev, { id: lineIdRef.current++, text: data }];
           return next.length > maxLines ? next.slice(next.length - maxLines) : next;
         }),
       onError: () => setConn("error"),
@@ -60,6 +63,26 @@ export default function LogStreamPanel({ path, className, maxLines = 2000 }: Pro
     closed: { label: "종료", cls: "bg-neutral-lightGray text-fg-muted" },
   }[conn];
 
+  let content;
+  if (lines.length > 0) {
+    content = lines.map((line) => <div key={line.id}>{line.text}</div>);
+  } else if (conn === "error") {
+    content = (
+      <span className="text-fg-subtle">
+        백엔드에 연결할 수 없습니다 — server/에서 FastAPI를 기동하세요 (README 참조).
+      </span>
+    );
+  } else {
+    content = (
+      <div className="flex h-full flex-col items-center justify-center gap-2">
+        <LoadingState />
+        <span className="typo-regular_caption text-fg-subtle">
+          {conn === "connecting" ? "연결 중…" : "학습 준비 중 — 로그 대기"}
+        </span>
+      </div>
+    );
+  }
+
   return (
     <div className={cn("flex flex-col overflow-hidden rounded-panel border border-line bg-surface", className)}>
       <div className="flex items-center justify-between border-b border-line/60 px-4 py-2">
@@ -79,23 +102,7 @@ export default function LogStreamPanel({ path, className, maxLines = 2000 }: Pro
         onScroll={onScroll}
         className="scrollbar-default h-[220px] overflow-y-auto bg-neutral-lightGray/40 px-4 py-2 font-mono text-[12px] leading-relaxed text-fg-muted"
       >
-        {lines.length === 0 ? (
-          conn === "error" ? (
-            <span className="text-fg-subtle">
-              백엔드에 연결할 수 없습니다 — server/에서 FastAPI를 기동하세요 (README 참조).
-            </span>
-          ) : (
-            /* 준비 중(연결·잡 초기화 등 로그가 아직 없는 구간)에도 진행 중임이 보이도록 애니메이션 표시 */
-            <div className="flex h-full flex-col items-center justify-center gap-2">
-              <LoadingState />
-              <span className="typo-regular_caption text-fg-subtle">
-                {conn === "connecting" ? "연결 중…" : "학습 준비 중 — 로그 대기"}
-              </span>
-            </div>
-          )
-        ) : (
-          lines.map((line, i) => <div key={i}>{line}</div>)
-        )}
+        {content}
       </div>
     </div>
   );

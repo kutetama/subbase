@@ -1,5 +1,5 @@
 // 설정 패널 프리미티브 — Section(제목·설명·행 묶음) / Row(라벨·설명·우측 컨트롤).
-// 3앱(studio·subBaseER·AutoJudge)이 각자 재발명했던 구조의 표준화 — studio 구조 참조 자체 구현(코드 복사 없음).
+// 3앱(studio·TOASTER·AutoJudge)이 각자 재발명했던 구조의 표준화 — studio 구조 참조 자체 구현(코드 복사 없음).
 import type { ReactNode } from "react";
 import { cn } from "@/ds/lib/cn";
 
@@ -7,11 +7,11 @@ export function SettingsSection({
   title,
   description,
   children,
-}: {
+}: Readonly<{
   title: string;
   description?: ReactNode;
   children: ReactNode;
-}) {
+}>) {
   return (
     <section className="flex flex-col">
       <div className="mb-1 flex flex-col gap-0.5">
@@ -31,7 +31,7 @@ export function SettingsRow({
   destructive,
   alignTop,
   children,
-}: {
+}: Readonly<{
   label: string;
   description?: ReactNode;
   /** 위험 액션 행 — 상단 구분선으로 분리 */
@@ -39,7 +39,7 @@ export function SettingsRow({
   /** 설명이 길어 컨트롤을 첫 줄에 정렬해야 할 때 */
   alignTop?: boolean;
   children?: ReactNode;
-}) {
+}>) {
   return (
     <div
       className={cn(
@@ -66,11 +66,11 @@ export function Segmented<T extends string>({
   value,
   options,
   onChange,
-}: {
+}: Readonly<{
   value: T;
-  options: { value: T; label: string }[];
+  options: readonly { value: T; label: string }[];
   onChange: (value: T) => void;
-}) {
+}>) {
   return (
     <div className="flex rounded-control border border-line bg-surface-page p-0.5">
       {options.map((opt) => (

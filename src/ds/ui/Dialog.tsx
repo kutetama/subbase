@@ -23,21 +23,18 @@ const Dialog = ({
   critical = false,
   onConfirm,
   onCancel,
-}: DialogProps) => {
+}: Readonly<DialogProps>) => {
   if (!open) return null;
 
   return createPortal(
-    <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/15 backdrop-blur-[1.5px]"
-      role="presentation"
-      onMouseDown={onCancel}
+    <dialog
+      open
+      className="fixed inset-0 z-[9999] m-0 flex h-auto w-auto max-h-none max-w-none items-center justify-center border-0 bg-transparent p-0"
+      aria-labelledby={title ? 'subbase-dialog-title' : undefined}
     >
+      <button type="button" aria-label="대화상자 닫기" className="absolute inset-0 border-0 bg-black/15 backdrop-blur-[1.5px]" onClick={onCancel} />
       <section
-        role="alertdialog"
-        aria-modal="true"
-        aria-labelledby={title ? 'subbase-dialog-title' : undefined}
-        className="w-[312px] rounded-panel bg-surface p-6 shadow-basic"
-        onMouseDown={(event) => event.stopPropagation()}
+        className="relative z-10 w-[312px] rounded-panel bg-surface p-6 shadow-basic"
       >
         {title && <h2 id="subbase-dialog-title" className="mb-2 text-base font-semibold leading-[22px] text-fg">{title}</h2>}
         <div className="text-sm leading-[22px] text-fg">{children}</div>
@@ -56,7 +53,7 @@ const Dialog = ({
           </button>
         </div>
       </section>
-    </div>,
+    </dialog>,
     document.getElementById('modal') as Element,
   );
 };

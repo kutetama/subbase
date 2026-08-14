@@ -10,11 +10,11 @@ export function PageShell({
   title,
   note,
   children,
-}: {
+}: Readonly<{
   title: string;
   note?: string;
   children: ReactNode;
-}) {
+}>) {
   return (
     <main className="mx-auto flex max-w-[980px] flex-col gap-8 px-8 py-8">
       <header className="flex flex-col gap-1">
@@ -26,7 +26,7 @@ export function PageShell({
   );
 }
 
-export function Section({ title, note, children }: { title: string; note?: string; children: ReactNode }) {
+export function Section({ title, note, children }: Readonly<{ title: string; note?: string; children: ReactNode }>) {
   return (
     <section className="flex flex-col gap-3">
       <div className="flex items-baseline gap-3">
@@ -38,7 +38,7 @@ export function Section({ title, note, children }: { title: string; note?: strin
   );
 }
 
-export function Panel({ children, className }: { children: ReactNode; className?: string }) {
+export function Panel({ children, className }: Readonly<{ children: ReactNode; className?: string }>) {
   return (
     <div className={cn("rounded-panel border border-line bg-surface px-6 py-5", className)}>
       {children}
@@ -46,7 +46,7 @@ export function Panel({ children, className }: { children: ReactNode; className?
   );
 }
 
-export function Row({ label, children }: { label: string; children: ReactNode }) {
+export function Row({ label, children }: Readonly<{ label: string; children: ReactNode }>) {
   return (
     <div className="flex items-center gap-4">
       <span className="w-[130px] shrink-0 typo-regular_caption text-fg-subtle">{label}</span>
@@ -55,7 +55,7 @@ export function Row({ label, children }: { label: string; children: ReactNode })
   );
 }
 
-export function Swatches({ items }: { items: readonly (readonly [string, string])[] }) {
+export function Swatches({ items }: Readonly<{ items: readonly (readonly [string, string])[] }>) {
   return (
     <div className="flex flex-wrap gap-2">
       {items.map(([name, cls]) => (
@@ -105,7 +105,7 @@ export const DEMO_TABS: TabProps[] = [
   { display: "로그", code: "logs" },
 ];
 
-export function StatusBadge({ status }: { status: JobRow["status"] }) {
+export function StatusBadge({ status }: Readonly<{ status: JobRow["status"] }>) {
   const styles = {
     running: "bg-accent-bg text-accent border border-accent/30",
     done: "bg-success-bg text-success border border-success/30",

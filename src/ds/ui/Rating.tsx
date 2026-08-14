@@ -6,8 +6,8 @@ interface RatingProps {
   readOnly?: boolean;
 }
 
-const Rating = ({ value, onChange, readOnly = false }: RatingProps) => (
-  <div className="flex items-center gap-1" role={readOnly ? 'img' : 'radiogroup'} aria-label={`별점 ${value}점`}>
+const Rating = ({ value, onChange, readOnly = false }: Readonly<RatingProps>) => (
+  <output className="flex items-center gap-1" aria-label={`별점 ${value}점`}>
     {[1, 2, 3, 4, 5].map((level) => (
       <button
         key={level}
@@ -21,7 +21,7 @@ const Rating = ({ value, onChange, readOnly = false }: RatingProps) => (
         ★
       </button>
     ))}
-  </div>
+  </output>
 );
 
 export default Rating;
