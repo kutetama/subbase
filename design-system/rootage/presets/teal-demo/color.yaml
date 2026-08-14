@@ -1,0 +1,164 @@
+# teal-demo 프리셋 — 고객사 커스텀 룩 예시 (2026-08-11 리허설 검증값).
+# 실제 고객사 프리셋을 만들 때 이 폴더를 복제해 값만 교체하면 된다 (토큰 이름 집합은 toast와 동일해야 함).
+kind: Tokens
+metadata:
+  id: color
+  name: Color
+data:
+  collection: color
+  tokens:
+    # ── 팔레트 층 (scale) ─────────────────────────────
+    $color.palette.white:
+      values:
+        theme-light: "#FFFFFF"
+        theme-dark: "#1F2125"
+    $color.palette.primary:
+      values:
+        theme-light: "#0FA5A0"
+        theme-dark: "#0FA5A0"
+    $color.palette.primary-dark:
+      values:
+        theme-light: "#0B8A86"
+        theme-dark: "#12B0AA"
+    $color.palette.primary-light:
+      values:
+        theme-light: "#7AD9D5"
+        theme-dark: "#5FBFBA"
+    $color.palette.primary-light-bg:
+      values:
+        theme-light: "#E3F7F6"
+        theme-dark: "#16302F"
+    $color.palette.primary-bg:
+      values:
+        theme-light: "#F2FBFA"
+        theme-dark: "#132A29"
+    $color.palette.primary-gradient-end:
+      values:
+        theme-light: "#2FBDB8"
+        theme-dark: "#2FBDB8"
+    $color.palette.sub:
+      values:
+        theme-light: "#7AD9D5"
+        theme-dark: "#5FBFBA"
+    $color.palette.third-1:
+      values: { theme-light: "#FFC516", theme-dark: "#FFC516" }
+    $color.palette.third-2:
+      values: { theme-light: "#16B5FF", theme-dark: "#16B5FF" }
+    $color.palette.third-3:
+      values: { theme-light: "#0A77AA", theme-dark: "#2E9CD4" }
+    $color.palette.third-4:
+      values: { theme-light: "#EE6A78", theme-dark: "#EE6A78" }
+    $color.palette.third-5:
+      values: { theme-light: "#EE8D98", theme-dark: "#EE8D98" }
+    $color.palette.third-6:
+      values: { theme-light: "#0B8A86", theme-dark: "#FF6242" }
+    $color.palette.third-7:
+      values: { theme-light: "#26D4C5", theme-dark: "#26D4C5" }
+    $color.palette.third-8:
+      values: { theme-light: "#4D53FF", theme-dark: "#7A7FFF" }
+    $color.palette.neutral-black:
+      values:
+        theme-light: "#222222"
+        theme-dark: "#E9EAEC"
+    $color.palette.neutral-dark-gray:
+      values:
+        theme-light: "#555555"
+        theme-dark: "#C6C8CC"
+    $color.palette.neutral-dark-middle-gray:
+      values:
+        theme-light: "#888888"
+        theme-dark: "#9A9DA5"
+    $color.palette.neutral-middle-gray:
+      values:
+        theme-light: "#AAAAAA"
+        theme-dark: "#6B6E76"
+    $color.palette.neutral-light-middle-gray:
+      values:
+        theme-light: "#EEEEEE"
+        theme-dark: "#2E3036"
+    $color.palette.neutral-light-gray:
+      values:
+        theme-light: "#F4F4F4"
+        theme-dark: "#26282D"
+    $color.palette.error:
+      values:
+        theme-light: "#CF2600"
+        theme-dark: "#F65238"
+    $color.palette.error-bg:
+      values:
+        theme-light: "#FFEBE6"
+        theme-dark: "#3B211C"
+    $color.palette.line-gray:
+      values:
+        theme-light: "#DBDBDB"
+        theme-dark: "#383B42"
+    $color.palette.caution:
+      values:
+        theme-light: "#E6A832"
+        theme-dark: "#E9B44A"
+    $color.palette.caution-bg:
+      values:
+        theme-light: "#FCF6EA"
+        theme-dark: "#322C1E"
+    $color.palette.base-bg:
+      values:
+        theme-light: "#F8F8F8"
+        theme-dark: "#17181B"
+    # success 계열 — 가이드에 없어 신설 (2026-08-11, ML 도구 요구. AutoJudge success 그린 계승, 대비 검증 통과)
+    $color.palette.success:
+      values:
+        theme-light: "#0B7A52"
+        theme-dark: "#34C08D"
+    $color.palette.success-bg:
+      values:
+        theme-light: "#E6F6EE"
+        theme-dark: "#1E3226"
+    # ── 시맨틱 층 (roles — 팔레트 참조, 모드 전환은 팔레트가 담당) ──
+    $color.semantic.surface:
+      values:
+        theme-light: "$color.palette.white"
+        theme-dark: "$color.palette.white"
+    $color.semantic.surface-page:
+      values:
+        theme-light: "$color.palette.base-bg"
+        theme-dark: "$color.palette.base-bg"
+    $color.semantic.fg:
+      values:
+        theme-light: "$color.palette.neutral-black"
+        theme-dark: "$color.palette.neutral-black"
+    $color.semantic.fg-muted:
+      values:
+        theme-light: "$color.palette.neutral-dark-gray"
+        theme-dark: "$color.palette.neutral-dark-gray"
+    $color.semantic.fg-subtle:
+      values:
+        theme-light: "$color.palette.neutral-dark-middle-gray"
+        theme-dark: "$color.palette.neutral-dark-middle-gray"
+    $color.semantic.line:
+      values:
+        theme-light: "$color.palette.line-gray"
+        theme-dark: "$color.palette.line-gray"
+    $color.semantic.accent:
+      values:
+        theme-light: "$color.palette.primary"
+        theme-dark: "$color.palette.primary"
+    $color.semantic.accent-bg:
+      values:
+        theme-light: "$color.palette.primary-bg"
+        theme-dark: "$color.palette.primary-bg"
+    $color.semantic.danger:
+      values:
+        theme-light: "$color.palette.error"
+        theme-dark: "$color.palette.error"
+    $color.semantic.danger-bg:
+      values:
+        theme-light: "$color.palette.error-bg"
+        theme-dark: "$color.palette.error-bg"
+    $color.semantic.success:
+      values:
+        theme-light: "$color.palette.success"
+        theme-dark: "$color.palette.success"
+    $color.semantic.success-bg:
+      values:
+        theme-light: "$color.palette.success-bg"
+        theme-dark: "$color.palette.success-bg"

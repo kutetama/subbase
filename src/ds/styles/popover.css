@@ -1,0 +1,15 @@
+/* @radix-ui/react-popover 콘텐츠 래퍼 포지셔닝 — ds/ui/ContextMenu.tsx를 Popover.Content로 감싸 쓰는
+   소비 측 화면에 적용(원본에서 ContextMenu는 항상 Popover.Content 자식으로 렌더링됨) */
+/* 원본: TOAST asset/styles/_popover.scss
+   변경: @use 제거, `@apply z-[9999] !important` → 플레인 CSS `z-index: 9999 !important`로 변환
+   (스펙 예시와 동일 패턴). 나머지 규칙은 SCSS 전용 문법이 없어 그대로 이식.
+*/
+[data-radix-popper-content-wrapper] {
+  z-index: 9999 !important;
+}
+
+.inline [data-radix-popper-content-wrapper] {
+  position: relative !important;
+  transform: none !important;
+  margin-top: 4px;
+}

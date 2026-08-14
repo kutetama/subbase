@@ -1,0 +1,15 @@
+# 폰트 토큰 (teal-demo) — 데모는 기본 SUIT 공유. 고객사 폰트로 바꾸려면 face.*와 family.base를 교체.
+# face.*가 있으면 코드젠이 @font-face를 생성한다. 시스템 폰트만 쓰는 프리셋은 face.* 항목을 생략.
+kind: Tokens
+metadata:
+  id: font
+  name: Font
+data:
+  collection: global
+  tokens:
+    $font.family.base:
+      values:
+        default: '"SUIT Variable", SUIT, "Pretendard Variable", Pretendard, system-ui, sans-serif'
+    $font.face.family: { values: { default: "SUIT Variable" } }
+    $font.face.src: { values: { default: "../assets/fonts/SUIT-Variable.woff2" } }
+    $font.face.weight: { values: { default: "100 900" } }

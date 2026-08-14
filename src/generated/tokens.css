@@ -1,0 +1,332 @@
+/* 생성 파일 — 수정 금지. 원천: design-system/rootage/ (scripts/build-tokens.mjs)
+   기본 프리셋: subbase */
+@font-face {
+  font-family: "SUIT Variable";
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/SUIT-Variable.woff2") format("woff2-variations");
+}
+
+:root {
+  --tk-dimension-header-height: 60px;
+  --tk-dimension-aside-width: 250px;
+  --tk-dimension-button-min-width: 110px;
+  --tk-dimension-button-small-min-width: 90px;
+  --tk-dimension-button-min-height: 42px;
+  --tk-dimension-modal-small-min-width: 400px;
+  --tk-dimension-modal-medium-min-width: 768px;
+  --tk-dimension-modal-head-height: 55px;
+  --tk-dimension-modal-foot-height: 57px;
+  --tk-dimension-filter-width: 200px;
+  --tk-dimension-context-menu-min-width: 150px;
+  --tk-dimension-body-min-width: 1024px;
+  --tk-radius-control: 10px;
+  --tk-radius-panel: 20px;
+  --tk-radius-card: 30px;
+  --tk-shadow-basic: 2px 2px 20px 0 rgba(170, 170, 170, 0.15);
+  --tk-shadow-hover: 0 0 10px 0 color-mix(in srgb, var(--tk-color-palette-primary-light) 50%, transparent);
+  --tk-shadow-shadow1: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+  --tk-typography-regular_overline-font-size: 10px;
+  --tk-typography-regular_overline-line-height: 1.6;
+  --tk-typography-regular_overline-font-weight: 400;
+  --tk-typography-regular_caption-font-size: 12px;
+  --tk-typography-regular_caption-line-height: 1.6;
+  --tk-typography-regular_caption-font-weight: 400;
+  --tk-typography-regular_smaller-font-size: 13px;
+  --tk-typography-regular_smaller-line-height: 1.8;
+  --tk-typography-regular_smaller-font-weight: 400;
+  --tk-typography-regular_smalllP-font-size: 14px;
+  --tk-typography-regular_smalllP-line-height: 1.6;
+  --tk-typography-regular_smalllP-font-weight: 400;
+  --tk-typography-medium_smaller-font-size: 13px;
+  --tk-typography-medium_smaller-line-height: 1.4;
+  --tk-typography-medium_smaller-font-weight: 500;
+  --tk-typography-semiBold_smaller-font-size: 13px;
+  --tk-typography-semiBold_smaller-line-height: 1.8;
+  --tk-typography-semiBold_smaller-font-weight: 600;
+  --tk-typography-semiBold_smalllP-font-size: 14px;
+  --tk-typography-semiBold_smalllP-line-height: 1.6;
+  --tk-typography-semiBold_smalllP-font-weight: 600;
+  --tk-typography-bold_caption-font-size: 12px;
+  --tk-typography-bold_caption-line-height: 1.8;
+  --tk-typography-bold_caption-font-weight: 700;
+  --tk-typography-bold_smaller-font-size: 13px;
+  --tk-typography-bold_smaller-line-height: 1.8;
+  --tk-typography-bold_smaller-font-weight: 700;
+  --tk-typography-bold_smallP-font-size: 14px;
+  --tk-typography-bold_smallP-line-height: 1.8;
+  --tk-typography-bold_smallP-font-weight: 700;
+  --tk-typography-bold_SemiSmallP-font-size: 15px;
+  --tk-typography-bold_SemiSmallP-line-height: 1.8;
+  --tk-typography-bold_SemiSmallP-font-weight: 700;
+  --tk-typography-bold_P-font-size: 16px;
+  --tk-typography-bold_P-line-height: 1.8;
+  --tk-typography-bold_P-font-weight: 700;
+  --tk-typography-bold_bigP-font-size: 20px;
+  --tk-typography-bold_bigP-line-height: 1.7;
+  --tk-typography-bold_bigP-font-weight: 700;
+  --tk-typography-bold_bigger-font-size: 26px;
+  --tk-typography-bold_bigger-line-height: 1.8;
+  --tk-typography-bold_bigger-font-weight: 700;
+  --tk-typography-bold_biggest-font-size: 32px;
+  --tk-typography-bold_biggest-line-height: 1.8;
+  --tk-typography-bold_biggest-font-weight: 700;
+  --tk-typography-bold_overline-font-size: 11px;
+  --tk-typography-bold_overline-line-height: 1.7;
+  --tk-typography-bold_overline-font-weight: 700;
+  --tk-typography-semiBold_h3-font-size: 24px;
+  --tk-typography-semiBold_h3-line-height: 1.7;
+  --tk-typography-semiBold_h3-font-weight: 600;
+  --tk-typography-bold_h2-font-size: 28px;
+  --tk-typography-bold_h2-line-height: 1.7;
+  --tk-typography-bold_h2-font-weight: 700;
+  --tk-typography-bold_display-font-size: 42px;
+  --tk-typography-bold_display-line-height: 1.7;
+  --tk-typography-bold_display-font-weight: 700;
+  --tk-color-palette-white: #FFFFFF;
+  --tk-color-palette-primary: #1C6BFF;
+  --tk-color-palette-primary-dark: #244BD7;
+  --tk-color-palette-primary-light: #8FB4FF;
+  --tk-color-palette-primary-light-bg: #E1EBFF;
+  --tk-color-palette-primary-bg: #EBF1FD;
+  --tk-color-palette-primary-gradient-end: #4A86FF;
+  --tk-color-palette-sub: #8FB4FF;
+  --tk-color-palette-third-1: #1C6BFF;
+  --tk-color-palette-third-2: #00BB2A;
+  --tk-color-palette-third-3: #B85E00;
+  --tk-color-palette-third-4: #EE4700;
+  --tk-color-palette-third-5: #7C5CE5;
+  --tk-color-palette-third-6: #00A6B2;
+  --tk-color-palette-third-7: #F9A80C;
+  --tk-color-palette-third-8: #5F646F;
+  --tk-color-palette-neutral-black: #222222;
+  --tk-color-palette-neutral-dark-gray: #5F646F;
+  --tk-color-palette-neutral-dark-middle-gray: #8D929C;
+  --tk-color-palette-neutral-middle-gray: #ABB0B9;
+  --tk-color-palette-neutral-light-middle-gray: #E2E5EB;
+  --tk-color-palette-neutral-light-gray: #F2F4F8;
+  --tk-color-palette-error: #C93B00;
+  --tk-color-palette-error-bg: #FFF0EA;
+  --tk-color-palette-line-gray: #DCE0E7;
+  --tk-color-palette-caution: #C77D00;
+  --tk-color-palette-caution-bg: #FFF7E8;
+  --tk-color-palette-base-bg: #FBFBFD;
+  --tk-color-palette-success: #008A20;
+  --tk-color-palette-success-bg: #E9F9ED;
+  --tk-color-semantic-surface: var(--tk-color-palette-white);
+  --tk-color-semantic-surface-page: var(--tk-color-palette-base-bg);
+  --tk-color-semantic-fg: var(--tk-color-palette-neutral-black);
+  --tk-color-semantic-fg-muted: var(--tk-color-palette-neutral-dark-gray);
+  --tk-color-semantic-fg-subtle: var(--tk-color-palette-neutral-dark-middle-gray);
+  --tk-color-semantic-line: var(--tk-color-palette-line-gray);
+  --tk-color-semantic-accent: var(--tk-color-palette-primary);
+  --tk-color-semantic-accent-bg: var(--tk-color-palette-primary-bg);
+  --tk-color-semantic-danger: var(--tk-color-palette-error);
+  --tk-color-semantic-danger-bg: var(--tk-color-palette-error-bg);
+  --tk-color-semantic-success: var(--tk-color-palette-success);
+  --tk-color-semantic-success-bg: var(--tk-color-palette-success-bg);
+  --tk-font-family-base: "SUIT Variable", SUIT, "Pretendard Variable", Pretendard, system-ui, sans-serif;
+}
+
+.dark {
+  --tk-shadow-basic: 2px 2px 20px 0 rgba(0, 0, 0, 0.45);
+  --tk-shadow-hover: 0 0 10px 0 color-mix(in srgb, var(--tk-color-palette-primary-light) 35%, transparent);
+  --tk-shadow-shadow1: 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+  --tk-color-palette-white: #202329;
+  --tk-color-palette-primary: #75A6FF;
+  --tk-color-palette-primary-dark: #9ABEFF;
+  --tk-color-palette-primary-light: #537CCB;
+  --tk-color-palette-primary-light-bg: #263956;
+  --tk-color-palette-primary-bg: #222F45;
+  --tk-color-palette-primary-gradient-end: #8EB6FF;
+  --tk-color-palette-sub: #537CCB;
+  --tk-color-palette-third-1: #75A6FF;
+  --tk-color-palette-third-2: #47D969;
+  --tk-color-palette-third-3: #FFAA59;
+  --tk-color-palette-third-4: #FF7840;
+  --tk-color-palette-third-5: #A58AF2;
+  --tk-color-palette-third-6: #43C6CF;
+  --tk-color-palette-third-7: #FBC451;
+  --tk-color-palette-third-8: #AEB3BD;
+  --tk-color-palette-neutral-black: #F4F5F7;
+  --tk-color-palette-neutral-dark-gray: #CDD0D6;
+  --tk-color-palette-neutral-dark-middle-gray: #A8ADB7;
+  --tk-color-palette-neutral-middle-gray: #777D88;
+  --tk-color-palette-neutral-light-middle-gray: #353942;
+  --tk-color-palette-neutral-light-gray: #292D34;
+  --tk-color-palette-error: #FF7840;
+  --tk-color-palette-error-bg: #49271D;
+  --tk-color-palette-line-gray: #3A3F48;
+  --tk-color-palette-caution: #F9C44E;
+  --tk-color-palette-caution-bg: #40351C;
+  --tk-color-palette-base-bg: #181B20;
+  --tk-color-palette-success: #47D969;
+  --tk-color-palette-success-bg: #1B3924;
+}
+
+
+
+@theme inline {
+  --color-surface: var(--tk-color-semantic-surface);
+  --color-surface-page: var(--tk-color-semantic-surface-page);
+  --color-fg: var(--tk-color-semantic-fg);
+  --color-fg-muted: var(--tk-color-semantic-fg-muted);
+  --color-fg-subtle: var(--tk-color-semantic-fg-subtle);
+  --color-line: var(--tk-color-semantic-line);
+  --color-accent: var(--tk-color-semantic-accent);
+  --color-accent-bg: var(--tk-color-semantic-accent-bg);
+  --color-danger: var(--tk-color-semantic-danger);
+  --color-danger-bg: var(--tk-color-semantic-danger-bg);
+  --color-success: var(--tk-color-semantic-success);
+  --color-success-bg: var(--tk-color-semantic-success-bg);
+  --color-white: var(--tk-color-palette-white);
+  --color-primary: var(--tk-color-palette-primary);
+  --color-primary-dark: var(--tk-color-palette-primary-dark);
+  --color-primary-light: var(--tk-color-palette-primary-light);
+  --color-primary-lightBg: var(--tk-color-palette-primary-light-bg);
+  --color-primary-bg: var(--tk-color-palette-primary-bg);
+  --color-sub: var(--tk-color-palette-sub);
+  --color-third-1: var(--tk-color-palette-third-1);
+  --color-third-2: var(--tk-color-palette-third-2);
+  --color-third-3: var(--tk-color-palette-third-3);
+  --color-third-4: var(--tk-color-palette-third-4);
+  --color-third-5: var(--tk-color-palette-third-5);
+  --color-third-6: var(--tk-color-palette-third-6);
+  --color-third-7: var(--tk-color-palette-third-7);
+  --color-third-8: var(--tk-color-palette-third-8);
+  --color-neutral-black: var(--tk-color-palette-neutral-black);
+  --color-neutral-darkGray: var(--tk-color-palette-neutral-dark-gray);
+  --color-neutral-darkMiddleGray: var(--tk-color-palette-neutral-dark-middle-gray);
+  --color-neutral-middleGray: var(--tk-color-palette-neutral-middle-gray);
+  --color-neutral-lightMiddleGray: var(--tk-color-palette-neutral-light-middle-gray);
+  --color-neutral-lightGray: var(--tk-color-palette-neutral-light-gray);
+  --color-semantic-error: var(--tk-color-palette-error);
+  --color-semantic-errorBg: var(--tk-color-palette-error-bg);
+  --color-semantic-lineGray: var(--tk-color-palette-line-gray);
+  --color-semantic-caution: var(--tk-color-palette-caution);
+  --color-semantic-cautionBg: var(--tk-color-palette-caution-bg);
+  --color-semantic-success: var(--tk-color-palette-success);
+  --color-semantic-successBg: var(--tk-color-palette-success-bg);
+  --color-semantic-bg: var(--tk-color-palette-base-bg);
+  --radius-control: var(--tk-radius-control);
+  --radius-panel: var(--tk-radius-panel);
+  --radius-card: var(--tk-radius-card);
+  --shadow-basic: var(--tk-shadow-basic);
+  --shadow-hover: var(--tk-shadow-hover);
+  --shadow-shadow1: var(--tk-shadow-shadow1);
+}
+
+@utility typo-regular_overline {
+  font-size: var(--tk-typography-regular_overline-font-size);
+  line-height: var(--tk-typography-regular_overline-line-height);
+  font-weight: var(--tk-typography-regular_overline-font-weight);
+}
+
+@utility typo-regular_caption {
+  font-size: var(--tk-typography-regular_caption-font-size);
+  line-height: var(--tk-typography-regular_caption-line-height);
+  font-weight: var(--tk-typography-regular_caption-font-weight);
+}
+
+@utility typo-regular_smaller {
+  font-size: var(--tk-typography-regular_smaller-font-size);
+  line-height: var(--tk-typography-regular_smaller-line-height);
+  font-weight: var(--tk-typography-regular_smaller-font-weight);
+}
+
+@utility typo-regular_smalllP {
+  font-size: var(--tk-typography-regular_smalllP-font-size);
+  line-height: var(--tk-typography-regular_smalllP-line-height);
+  font-weight: var(--tk-typography-regular_smalllP-font-weight);
+}
+
+@utility typo-medium_smaller {
+  font-size: var(--tk-typography-medium_smaller-font-size);
+  line-height: var(--tk-typography-medium_smaller-line-height);
+  font-weight: var(--tk-typography-medium_smaller-font-weight);
+}
+
+@utility typo-semiBold_smaller {
+  font-size: var(--tk-typography-semiBold_smaller-font-size);
+  line-height: var(--tk-typography-semiBold_smaller-line-height);
+  font-weight: var(--tk-typography-semiBold_smaller-font-weight);
+}
+
+@utility typo-semiBold_smalllP {
+  font-size: var(--tk-typography-semiBold_smalllP-font-size);
+  line-height: var(--tk-typography-semiBold_smalllP-line-height);
+  font-weight: var(--tk-typography-semiBold_smalllP-font-weight);
+}
+
+@utility typo-bold_caption {
+  font-size: var(--tk-typography-bold_caption-font-size);
+  line-height: var(--tk-typography-bold_caption-line-height);
+  font-weight: var(--tk-typography-bold_caption-font-weight);
+}
+
+@utility typo-bold_smaller {
+  font-size: var(--tk-typography-bold_smaller-font-size);
+  line-height: var(--tk-typography-bold_smaller-line-height);
+  font-weight: var(--tk-typography-bold_smaller-font-weight);
+}
+
+@utility typo-bold_smallP {
+  font-size: var(--tk-typography-bold_smallP-font-size);
+  line-height: var(--tk-typography-bold_smallP-line-height);
+  font-weight: var(--tk-typography-bold_smallP-font-weight);
+}
+
+@utility typo-bold_SemiSmallP {
+  font-size: var(--tk-typography-bold_SemiSmallP-font-size);
+  line-height: var(--tk-typography-bold_SemiSmallP-line-height);
+  font-weight: var(--tk-typography-bold_SemiSmallP-font-weight);
+}
+
+@utility typo-bold_P {
+  font-size: var(--tk-typography-bold_P-font-size);
+  line-height: var(--tk-typography-bold_P-line-height);
+  font-weight: var(--tk-typography-bold_P-font-weight);
+}
+
+@utility typo-bold_bigP {
+  font-size: var(--tk-typography-bold_bigP-font-size);
+  line-height: var(--tk-typography-bold_bigP-line-height);
+  font-weight: var(--tk-typography-bold_bigP-font-weight);
+}
+
+@utility typo-bold_bigger {
+  font-size: var(--tk-typography-bold_bigger-font-size);
+  line-height: var(--tk-typography-bold_bigger-line-height);
+  font-weight: var(--tk-typography-bold_bigger-font-weight);
+}
+
+@utility typo-bold_biggest {
+  font-size: var(--tk-typography-bold_biggest-font-size);
+  line-height: var(--tk-typography-bold_biggest-line-height);
+  font-weight: var(--tk-typography-bold_biggest-font-weight);
+}
+
+@utility typo-bold_overline {
+  font-size: var(--tk-typography-bold_overline-font-size);
+  line-height: var(--tk-typography-bold_overline-line-height);
+  font-weight: var(--tk-typography-bold_overline-font-weight);
+}
+
+@utility typo-semiBold_h3 {
+  font-size: var(--tk-typography-semiBold_h3-font-size);
+  line-height: var(--tk-typography-semiBold_h3-line-height);
+  font-weight: var(--tk-typography-semiBold_h3-font-weight);
+}
+
+@utility typo-bold_h2 {
+  font-size: var(--tk-typography-bold_h2-font-size);
+  line-height: var(--tk-typography-bold_h2-line-height);
+  font-weight: var(--tk-typography-bold_h2-font-weight);
+}
+
+@utility typo-bold_display {
+  font-size: var(--tk-typography-bold_display-font-size);
+  line-height: var(--tk-typography-bold_display-line-height);
+  font-weight: var(--tk-typography-bold_display-font-weight);
+}

@@ -1,0 +1,104 @@
+# notion 프리셋 — DESIGN-notion.md 매핑 (2026-08-12): 페이퍼 웜 오프화이트 캔버스 + 노션 블루 단일 액센트.
+# 매핑 원칙:
+#   - 라이트 = 문서 원값 우선 (canvas-soft #F6F5F4 = 페이지, white = 카드 — claude와 동일 구도).
+#   - 다크 = 문서 미정의 → ink 계열(웜 차콜)에서 R1~R6 파생. 다크 액센트는 문서의 accent-sky(#62AEF0)를 채용
+#     (원 primary #0075DE는 다크 서피스 대비 부족).
+#   - third 8색 = 문서의 "스티커 팔레트"(장식 전용 규정)를 차트/카테고리 전용으로 전재 — 구조 색으로는 불사용.
+#     게이트 슬롯(3·8)에는 고대비 색(orange·brown) 배치, 연보라(#D6B6F6)는 심화 파생.
+#   - 상태색 = 문서에 시맨틱 램프 없음("스티커가 상태를 대신") → 스티커 green 심화·notion 계열 red 파생.
+#   - caution 라이트 = 문서 orange #DD5B00 원값(4.0:1) — 브랜드 정본 NOTE 예외, 배지 패턴 권장.
+kind: Tokens
+metadata:
+  id: color
+  name: Color (notion)
+data:
+  collection: color
+  tokens:
+    $color.palette.white:            # 카드·패널 = canvas/surface(#FFFFFF)
+      values: { theme-light: "#FFFFFF", theme-dark: "#262625" }
+    $color.palette.primary:          # notion blue / 다크는 accent-sky 채용
+      values: { theme-light: "#0075DE", theme-dark: "#62AEF0" }
+    $color.palette.primary-dark:     # primary-active(#005BAB)
+      values: { theme-light: "#005BAB", theme-dark: "#8CC5F5" }
+    $color.palette.primary-light:
+      values: { theme-light: "#7FB8EC", theme-dark: "#4E88BC" }
+    $color.palette.primary-light-bg:
+      values: { theme-light: "#DDEBFA", theme-dark: "#1E3247" }
+    $color.palette.primary-bg:       # 호버·선택 틴트 (연블루, 파생)
+      values: { theme-light: "#E9F1FB", theme-dark: "#263647" }
+    $color.palette.primary-gradient-end:
+      values: { theme-light: "#3E97E8", theme-dark: "#7FBCF2" }
+    $color.palette.sub:
+      values: { theme-light: "#62AEF0", theme-dark: "#62AEF0" }
+    # 카테고리 8색 — 스티커 팔레트 전재 (sky·teal·orange·pink·purple·green·deep-purple·brown)
+    $color.palette.third-1:
+      values: { theme-light: "#62AEF0", theme-dark: "#62AEF0" }
+    $color.palette.third-2:
+      values: { theme-light: "#2A9D99", theme-dark: "#3FB5B1" }
+    $color.palette.third-3:          # 게이트 슬롯 — orange(#DD5B00) 배치
+      values: { theme-light: "#DD5B00", theme-dark: "#F0813D" }
+    $color.palette.third-4:
+      values: { theme-light: "#FF64C8", theme-dark: "#FF7ED2" }
+    $color.palette.third-5:          # 문서 #D6B6F6은 백지 시인성 부족 → 심화 파생
+      values: { theme-light: "#B98AE0", theme-dark: "#C9A5EC" }
+    $color.palette.third-6:
+      values: { theme-light: "#1AAE39", theme-dark: "#3DC25B" }
+    $color.palette.third-7:          # accent-purple-deep(#391C57) 계열 — 양 모드 시인성 조정
+      values: { theme-light: "#5A3E85", theme-dark: "#A585D1" }
+    $color.palette.third-8:          # 게이트 슬롯 — brown(#523410) 원값
+      values: { theme-light: "#523410", theme-dark: "#A8845C" }
+    # 뉴트럴 — ink 4단 (#000·#31302E·#615D59·#A39E98) + hairline
+    $color.palette.neutral-black:
+      values: { theme-light: "#000000", theme-dark: "#EDECEA" }
+    $color.palette.neutral-dark-gray:
+      values: { theme-light: "#31302E", theme-dark: "#C8C6C2" }
+    $color.palette.neutral-dark-middle-gray:
+      values: { theme-light: "#615D59", theme-dark: "#A3A09A" }
+    $color.palette.neutral-middle-gray:
+      values: { theme-light: "#A39E98", theme-dark: "#6E6A65" }
+    $color.palette.neutral-light-middle-gray:  # hairline(#E6E6E6)
+      values: { theme-light: "#E6E6E6", theme-dark: "#3A3938" }
+    $color.palette.neutral-light-gray:         # 밴드 — 페이퍼보다 한 단계 깊게 파생
+      values: { theme-light: "#EFEEEC", theme-dark: "#2E2D2B" }
+    # 상태 — 문서 무정의 → 파생 (notion 계열 red, 스티커 green 심화)
+    $color.palette.error:
+      values: { theme-light: "#C4423D", theme-dark: "#E77570" }
+    $color.palette.error-bg:
+      values: { theme-light: "#FBE9E7", theme-dark: "#462927" }
+    $color.palette.line-gray:        # hairline은 1.27:1로 게이트(1.3) 미달 → 심화
+      values: { theme-light: "#D6D5D3", theme-dark: "#403F3D" }
+    $color.palette.caution:          # 문서 orange 원값 — 라이트 NOTE 예외
+      values: { theme-light: "#DD5B00", theme-dark: "#F0A24A" }
+    $color.palette.caution-bg:
+      values: { theme-light: "#FBEFE0", theme-dark: "#3F3320" }
+    $color.palette.base-bg:          # 페이지 = canvas-soft(#F6F5F4) — 워밍 페이퍼
+      values: { theme-light: "#F6F5F4", theme-dark: "#1F1E1D" }
+    $color.palette.success:          # 스티커 green(#1AAE39)은 3.2:1 → 텍스트용 심화
+      values: { theme-light: "#157F2E", theme-dark: "#4FC96D" }
+    $color.palette.success-bg:
+      values: { theme-light: "#E5F6E9", theme-dark: "#1F3D28" }
+    # ── 시맨틱 층 (전 프리셋 공통 참조 구조 — 파리티 필수) ──
+    $color.semantic.surface:
+      values: { theme-light: "$color.palette.white", theme-dark: "$color.palette.white" }
+    $color.semantic.surface-page:
+      values: { theme-light: "$color.palette.base-bg", theme-dark: "$color.palette.base-bg" }
+    $color.semantic.fg:
+      values: { theme-light: "$color.palette.neutral-black", theme-dark: "$color.palette.neutral-black" }
+    $color.semantic.fg-muted:
+      values: { theme-light: "$color.palette.neutral-dark-gray", theme-dark: "$color.palette.neutral-dark-gray" }
+    $color.semantic.fg-subtle:
+      values: { theme-light: "$color.palette.neutral-dark-middle-gray", theme-dark: "$color.palette.neutral-dark-middle-gray" }
+    $color.semantic.line:
+      values: { theme-light: "$color.palette.line-gray", theme-dark: "$color.palette.line-gray" }
+    $color.semantic.accent:
+      values: { theme-light: "$color.palette.primary", theme-dark: "$color.palette.primary" }
+    $color.semantic.accent-bg:
+      values: { theme-light: "$color.palette.primary-bg", theme-dark: "$color.palette.primary-bg" }
+    $color.semantic.danger:
+      values: { theme-light: "$color.palette.error", theme-dark: "$color.palette.error" }
+    $color.semantic.danger-bg:
+      values: { theme-light: "$color.palette.error-bg", theme-dark: "$color.palette.error-bg" }
+    $color.semantic.success:
+      values: { theme-light: "$color.palette.success", theme-dark: "$color.palette.success" }
+    $color.semantic.success-bg:
+      values: { theme-light: "$color.palette.success-bg", theme-dark: "$color.palette.success-bg" }

@@ -1,0 +1,102 @@
+# spotify 프리셋 — DESIGN-spotify.md 매핑 (2026-08-12): 니어블랙 몰입 다크 + 스포티파이 그린 단일 액센트.
+# 매핑 원칙 — **다크가 브랜드 정본**인 첫 프리셋 (기존은 라이트 정본·다크 파생의 역방향):
+#   - 다크 = 문서 원값 (#121212 페이지 · #181818 카드 · #1F1F1F 밴드 · green #1ED760 · 시맨틱 3색).
+#   - 라이트 = 문서 미정의 → 밝은 서피스 위 동계열 심화로 파생. 특히 green #1ED760은 백지 1.6:1이라
+#     라이트 액센트는 #128A3E(텍스트 대체 #0E6B31)로 크게 심화 — 브랜드 그린의 라이트 해석.
+#   - third 8색 = 문서 시맨틱(green·blue·orange·red)+파생(purple·teal·gold·gray)으로 구성.
+#   - "앨범 아트가 색을 낸다" 원칙상 UI는 무채색 — third는 차트 전용.
+kind: Tokens
+metadata:
+  id: color
+  name: Color (spotify)
+data:
+  collection: color
+  tokens:
+    $color.palette.white:            # 카드 = Dark Surface(#181818) / 라이트 파생 백지
+      values: { theme-light: "#FFFFFF", theme-dark: "#181818" }
+    $color.palette.primary:          # Spotify Green — 라이트는 대비 심화 해석
+      values: { theme-light: "#128A3E", theme-dark: "#1ED760" }
+    $color.palette.primary-dark:
+      values: { theme-light: "#0E6B31", theme-dark: "#5FEA8C" }
+    $color.palette.primary-light:
+      values: { theme-light: "#63D68A", theme-dark: "#6FE39A" }
+    $color.palette.primary-light-bg:
+      values: { theme-light: "#DBF5E4", theme-dark: "#14361F" }
+    $color.palette.primary-bg:
+      values: { theme-light: "#E4F7EB", theme-dark: "#1B2E22" }
+    $color.palette.primary-gradient-end:
+      values: { theme-light: "#17A94C", theme-dark: "#3BE477" }
+    $color.palette.sub:              # announcement blue
+      values: { theme-light: "#539DF5", theme-dark: "#539DF5" }
+    # 카테고리 8색 — 시맨틱 3색 + 그린 + 파생 4색
+    $color.palette.third-1:
+      values: { theme-light: "#1DB954", theme-dark: "#1ED760" }
+    $color.palette.third-2:
+      values: { theme-light: "#3D87E0", theme-dark: "#539DF5" }
+    $color.palette.third-3:          # 게이트 슬롯 — warning orange 심화/원값
+      values: { theme-light: "#B36A00", theme-dark: "#FFA42B" }
+    $color.palette.third-4:
+      values: { theme-light: "#D63864", theme-dark: "#F3727F" }
+    $color.palette.third-5:
+      values: { theme-light: "#8E6BC8", theme-dark: "#A98EDB" }
+    $color.palette.third-6:
+      values: { theme-light: "#1F8F85", theme-dark: "#2AB3A6" }
+    $color.palette.third-7:
+      values: { theme-light: "#A67C00", theme-dark: "#E7C64A" }
+    $color.palette.third-8:          # 게이트 슬롯 — 무채색
+      values: { theme-light: "#6E6E6E", theme-dark: "#9E9E9E" }
+    # 뉴트럴 — 다크는 문서 텍스트 램프(#FFF·#B3B3B3·#7C7C7C), 라이트는 무채 파생
+    $color.palette.neutral-black:
+      values: { theme-light: "#121212", theme-dark: "#FFFFFF" }
+    $color.palette.neutral-dark-gray:
+      values: { theme-light: "#3E3E3E", theme-dark: "#D6D6D6" }
+    $color.palette.neutral-dark-middle-gray:  # 다크 = Silver(#B3B3B3)
+      values: { theme-light: "#6A6A6A", theme-dark: "#B3B3B3" }
+    $color.palette.neutral-middle-gray:       # 다크 = Light Border(#7C7C7C)
+      values: { theme-light: "#8F8F8F", theme-dark: "#7C7C7C" }
+    $color.palette.neutral-light-middle-gray:
+      values: { theme-light: "#E3E3E3", theme-dark: "#2E2E2E" }
+    $color.palette.neutral-light-gray:        # 밴드 — 다크 = Mid Dark(#1F1F1F)
+      values: { theme-light: "#EFEFEF", theme-dark: "#1F1F1F" }
+    # 상태 — 다크 = 문서 시맨틱 원값, 라이트 = 심화 파생
+    $color.palette.error:            # negative red(#F3727F)
+      values: { theme-light: "#C7304C", theme-dark: "#F3727F" }
+    $color.palette.error-bg:
+      values: { theme-light: "#FBE7EA", theme-dark: "#43242A" }
+    $color.palette.line-gray:        # 다크 = Border Gray(#3E3E3E 계열)
+      values: { theme-light: "#D5D5D5", theme-dark: "#3E3E3E" }
+    $color.palette.caution:          # warning orange(#FFA42B)
+      values: { theme-light: "#A96800", theme-dark: "#FFA42B" }
+    $color.palette.caution-bg:
+      values: { theme-light: "#F8EFDD", theme-dark: "#3C3118" }
+    $color.palette.base-bg:          # 페이지 = Near Black(#121212) / 라이트 파생
+      values: { theme-light: "#F7F7F7", theme-dark: "#121212" }
+    $color.palette.success:
+      values: { theme-light: "#0E7A36", theme-dark: "#1ED760" }
+    $color.palette.success-bg:
+      values: { theme-light: "#E2F5E8", theme-dark: "#16351F" }
+    # ── 시맨틱 층 (전 프리셋 공통 참조 구조 — 파리티 필수) ──
+    $color.semantic.surface:
+      values: { theme-light: "$color.palette.white", theme-dark: "$color.palette.white" }
+    $color.semantic.surface-page:
+      values: { theme-light: "$color.palette.base-bg", theme-dark: "$color.palette.base-bg" }
+    $color.semantic.fg:
+      values: { theme-light: "$color.palette.neutral-black", theme-dark: "$color.palette.neutral-black" }
+    $color.semantic.fg-muted:
+      values: { theme-light: "$color.palette.neutral-dark-gray", theme-dark: "$color.palette.neutral-dark-gray" }
+    $color.semantic.fg-subtle:
+      values: { theme-light: "$color.palette.neutral-dark-middle-gray", theme-dark: "$color.palette.neutral-dark-middle-gray" }
+    $color.semantic.line:
+      values: { theme-light: "$color.palette.line-gray", theme-dark: "$color.palette.line-gray" }
+    $color.semantic.accent:
+      values: { theme-light: "$color.palette.primary", theme-dark: "$color.palette.primary" }
+    $color.semantic.accent-bg:
+      values: { theme-light: "$color.palette.primary-bg", theme-dark: "$color.palette.primary-bg" }
+    $color.semantic.danger:
+      values: { theme-light: "$color.palette.error", theme-dark: "$color.palette.error" }
+    $color.semantic.danger-bg:
+      values: { theme-light: "$color.palette.error-bg", theme-dark: "$color.palette.error-bg" }
+    $color.semantic.success:
+      values: { theme-light: "$color.palette.success", theme-dark: "$color.palette.success" }
+    $color.semantic.success-bg:
+      values: { theme-light: "$color.palette.success-bg", theme-dark: "$color.palette.success-bg" }

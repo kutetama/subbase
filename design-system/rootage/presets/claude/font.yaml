@@ -1,0 +1,19 @@
+# 폰트 (claude 프리셋) — 문서의 StyreneB 대체로 Inter(문서 명시 대체재, OFL) 채택.
+# face(주) = Inter Variable 라틴 서브셋 + face2(보조) = SUIT — 한글은 SUIT로 폴백하는 라틴+CJK 페어.
+# 세리프 디스플레이(Copernicus)는 라이선스 폰트라 미적용(문서 Known Gaps와 동일) — 필요 시 후속 결정.
+kind: Tokens
+metadata:
+  id: font
+  name: Font (claude)
+data:
+  collection: global
+  tokens:
+    $font.family.base:
+      values:
+        default: '"Inter Variable", "SUIT Variable", SUIT, "Pretendard Variable", system-ui, sans-serif'
+    $font.face.family: { values: { default: "Inter Variable" } }
+    $font.face.src: { values: { default: "../assets/fonts/InterVariable-latin.woff2" } }
+    $font.face.weight: { values: { default: "100 900" } }
+    $font.face2.family: { values: { default: "SUIT Variable" } }
+    $font.face2.src: { values: { default: "../assets/fonts/SUIT-Variable.woff2" } }
+    $font.face2.weight: { values: { default: "100 900" } }

@@ -1,0 +1,33 @@
+/* react-day-picker(v9) 브랜드 스킨 — 전 색상을 TDS 토큰 참조로 구동 (프리셋·다크모드 자동 추종).
+   원본: TOAST asset/styles/_daypicker.scss (블루 #398bff 하드코딩).
+   변경(2026-08-11, 유저 확정): 캘린더 액센트를 타 컴포넌트와 동일한 브랜드(primary) 계열로 통일.
+   다크 가독성: range 구간 배경을 accent-bg(다크 웜 톤)로, 구간 글자를 fg로 지정 —
+   fg/accent-bg 페어는 대비 검증 통과 항목(라이트 15.4:1 · 다크 12.8:1, npm run contrast). */
+.rdp-root {
+  /* 선택 시작·끝 (원형 강조) — 브랜드 코랄 + 흰 글자 (제품 버튼 관례) */
+  --rdp-accent-color: var(--tk-color-palette-primary);
+  --rdp-range_start-date-background-color: var(--tk-color-palette-primary);
+  --rdp-range_end-date-background-color: var(--tk-color-palette-primary);
+  --rdp-range_start-color: var(--tk-color-palette-white);
+  --rdp-range_end-color: var(--tk-color-palette-white);
+
+  /* 선택 구간(middle) — 브랜드 틴트 배경 + 본문색 글자 (다크에서 자동 플립) */
+  --rdp-accent-background-color: var(--tk-color-semantic-accent-bg);
+  --rdp-range_start-background: var(--tk-color-semantic-accent-bg);
+  --rdp-range_end-background: var(--tk-color-semantic-accent-bg);
+  --rdp-range_middle-background-color: var(--tk-color-semantic-accent-bg);
+  --rdp-range_middle-color: var(--tk-color-semantic-fg);
+
+  --rdp-today-color: var(--tk-color-palette-primary);
+  --rdp-selected-border: 2px solid var(--tk-color-palette-primary);
+}
+
+/* 다크 — 전역 hover 틴트(accent-bg, 서피스 대비 1.05:1)는 구간 "밴드"로는 묻힘(유저 피드백 2026-08-11).
+   캘린더 한정으로 primary 28% 혼합의 더 밝은 웜 밴드 사용 — 서피스 대비 ~1.6:1로 밴드가 드러나고,
+   구간 글자(fg)는 ~8.5:1 유지. 전역 accent-bg는 불변(행 hover 등), 프리셋은 primary 참조라 자동 추종. */
+.dark .rdp-root {
+  --rdp-accent-background-color: color-mix(in srgb, var(--tk-color-palette-primary) 28%, var(--tk-color-semantic-surface));
+  --rdp-range_middle-background-color: color-mix(in srgb, var(--tk-color-palette-primary) 28%, var(--tk-color-semantic-surface));
+  --rdp-range_start-background: color-mix(in srgb, var(--tk-color-palette-primary) 28%, var(--tk-color-semantic-surface));
+  --rdp-range_end-background: color-mix(in srgb, var(--tk-color-palette-primary) 28%, var(--tk-color-semantic-surface));
+}

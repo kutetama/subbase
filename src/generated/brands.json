@@ -1,0 +1,61 @@
+{
+  "default": "subbase",
+  "runtime": false,
+  "brands": [
+    "subbase",
+    "apple",
+    "claude",
+    "notion",
+    "spotify",
+    "teal-demo",
+    "toast"
+  ],
+  "fonts": {
+    "apple": {
+      "base": "-apple-system, BlinkMacSystemFont, system-ui, \"Inter Variable\", \"SUIT Variable\", SUIT, sans-serif",
+      "faces": [
+        "Inter Variable",
+        "SUIT Variable"
+      ]
+    },
+    "claude": {
+      "base": "\"Inter Variable\", \"SUIT Variable\", SUIT, \"Pretendard Variable\", system-ui, sans-serif",
+      "faces": [
+        "Inter Variable",
+        "SUIT Variable"
+      ]
+    },
+    "notion": {
+      "base": "\"Inter Variable\", \"SUIT Variable\", SUIT, \"Pretendard Variable\", system-ui, sans-serif",
+      "faces": [
+        "Inter Variable",
+        "SUIT Variable"
+      ]
+    },
+    "spotify": {
+      "base": "\"Inter Variable\", \"SUIT Variable\", SUIT, \"Pretendard Variable\", system-ui, sans-serif",
+      "faces": [
+        "Inter Variable",
+        "SUIT Variable"
+      ]
+    },
+    "subbase": {
+      "base": "\"SUIT Variable\", SUIT, \"Pretendard Variable\", Pretendard, system-ui, sans-serif",
+      "faces": [
+        "SUIT Variable"
+      ]
+    },
+    "teal-demo": {
+      "base": "\"SUIT Variable\", SUIT, \"Pretendard Variable\", Pretendard, system-ui, sans-serif",
+      "faces": [
+        "SUIT Variable"
+      ]
+    },
+    "toast": {
+      "base": "\"SUIT Variable\", SUIT, \"Pretendard Variable\", Pretendard, system-ui, sans-serif",
+      "faces": [
+        "SUIT Variable"
+      ]
+    }
+  }
+}

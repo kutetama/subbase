@@ -1,0 +1,17 @@
+/* react-toastify 컨테이너 스킨 — ds/ui/Toast.tsx 콘텐츠를 감싸는 전역 <ToastContainer className="app-toast"> 에 적용 */
+/* 원본: TOAST asset/styles/_react-toastify.scss
+   변경: SCSS @apply를 플레인 CSS로 변환(사유는 react-tooltip.css 헤더와 동일 — 독립 import CSS라
+   Tailwind 처리 보장이 없어 전부 plain CSS로 풀어씀). --toastify-* 커스텀 프로퍼티 값('fit' 문자열 등)은
+   원본 그대로 보존 — react-toastify 라이브러리 자체 계약이라 임의 수정하지 않음.
+*/
+.app-toast {
+  --toastify-toast-width: 'fit';
+  --toastify-toast-min-height: 'fit';
+  --toastify-toast-max-height: 'fit';
+  --toastify-toast-padding: 0;
+  --toastify-toast-bd-radius: 0;
+  --toastify-toast-shadow: none;
+
+  bottom: 2.75rem;
+  z-index: 10000;
+}

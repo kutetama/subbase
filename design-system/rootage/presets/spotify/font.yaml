@@ -1,0 +1,17 @@
+# 폰트 (spotify 프리셋) — SpotifyMixUI(Circular 계열)는 사유 폰트 → 기하학적 산세리프 대체로 Inter + SUIT 한글 페어.
+kind: Tokens
+metadata:
+  id: font
+  name: Font (spotify)
+data:
+  collection: global
+  tokens:
+    $font.family.base:
+      values:
+        default: '"Inter Variable", "SUIT Variable", SUIT, "Pretendard Variable", system-ui, sans-serif'
+    $font.face.family: { values: { default: "Inter Variable" } }
+    $font.face.src: { values: { default: "../assets/fonts/InterVariable-latin.woff2" } }
+    $font.face.weight: { values: { default: "100 900" } }
+    $font.face2.family: { values: { default: "SUIT Variable" } }
+    $font.face2.src: { values: { default: "../assets/fonts/SUIT-Variable.woff2" } }
+    $font.face2.weight: { values: { default: "100 900" } }

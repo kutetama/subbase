@@ -1,0 +1,22 @@
+# TOAST boxShadow 3종 — 모드 지원 컬렉션으로 승격 (다크는 블랙 알파 강화, R6).
+# 라이트 값은 제품 원본 (26=15%, 80=50% 주석대로 풀어 기입).
+kind: Tokens
+metadata:
+  id: shadow
+  name: Shadow
+data:
+  collection: color
+  tokens:
+    $shadow.basic:
+      values:
+        theme-light: "2px 2px 20px 0 rgba(170, 170, 170, 0.15)"
+        theme-dark: "2px 2px 20px 0 rgba(0, 0, 0, 0.45)"
+    # hover 글로우는 브랜드 자동 추종 — primary-light 참조(color-mix)라 프리셋 교체 시 함께 바뀜
+    $shadow.hover:
+      values:
+        theme-light: "0 0 10px 0 color-mix(in srgb, var(--tk-color-palette-primary-light) 50%, transparent)"
+        theme-dark: "0 0 10px 0 color-mix(in srgb, var(--tk-color-palette-primary-light) 35%, transparent)"
+    $shadow.shadow1:
+      values:
+        theme-light: "0 2px 10px 0 rgba(0, 0, 0, 0.05)"
+        theme-dark: "0 2px 10px 0 rgba(0, 0, 0, 0.4)"

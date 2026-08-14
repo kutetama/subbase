@@ -1,0 +1,17 @@
+# 폰트 (notion 프리셋) — NotionInter는 Inter의 사내 튜닝(문서 명시) → Inter 대체 + SUIT 한글 페어.
+kind: Tokens
+metadata:
+  id: font
+  name: Font (notion)
+data:
+  collection: global
+  tokens:
+    $font.family.base:
+      values:
+        default: '"Inter Variable", "SUIT Variable", SUIT, "Pretendard Variable", system-ui, sans-serif'
+    $font.face.family: { values: { default: "Inter Variable" } }
+    $font.face.src: { values: { default: "../assets/fonts/InterVariable-latin.woff2" } }
+    $font.face.weight: { values: { default: "100 900" } }
+    $font.face2.family: { values: { default: "SUIT Variable" } }
+    $font.face2.src: { values: { default: "../assets/fonts/SUIT-Variable.woff2" } }
+    $font.face2.weight: { values: { default: "100 900" } }

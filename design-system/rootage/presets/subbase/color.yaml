@@ -1,0 +1,165 @@
+# subBase Figma 정본 매핑 — TguHa6sJ8LimFvTMkxMoce, Foundations/Color Token(83:4013).
+# 라이트 값은 Figma 원값을 사용한다. 다크 모드는 파일에 정의가 없어 동일 색상 계열로 파생했다.
+# Brand Color는 실제 행동과 핵심 상태에 제한적으로 사용한다는 Figma 가이드를 따른다.
+kind: Tokens
+metadata:
+  id: color
+  name: Color (subbase)
+data:
+  collection: color
+  tokens:
+    # ── 팔레트 층 (scale) ─────────────────────────────
+    $color.palette.white:
+      values:
+        theme-light: "#FFFFFF"
+        theme-dark: "#202329"
+    $color.palette.primary:
+      values:
+        theme-light: "#1C6BFF"
+        theme-dark: "#75A6FF"
+    $color.palette.primary-dark:
+      values:
+        theme-light: "#244BD7"
+        theme-dark: "#9ABEFF"
+    $color.palette.primary-light:
+      values:
+        theme-light: "#8FB4FF"
+        theme-dark: "#537CCB"
+    $color.palette.primary-light-bg:
+      values:
+        theme-light: "#E1EBFF"
+        theme-dark: "#263956"
+    $color.palette.primary-bg:
+      values:
+        theme-light: "#EBF1FD"
+        theme-dark: "#222F45"
+    $color.palette.primary-gradient-end:
+      values:
+        theme-light: "#4A86FF"
+        theme-dark: "#8EB6FF"
+    $color.palette.sub:
+      values:
+        theme-light: "#8FB4FF"
+        theme-dark: "#537CCB"
+    $color.palette.third-1:
+      values: { theme-light: "#1C6BFF", theme-dark: "#75A6FF" }
+    $color.palette.third-2:
+      values: { theme-light: "#00BB2A", theme-dark: "#47D969" }
+    $color.palette.third-3:
+      values: { theme-light: "#B85E00", theme-dark: "#FFAA59" }
+    $color.palette.third-4:
+      values: { theme-light: "#EE4700", theme-dark: "#FF7840" }
+    $color.palette.third-5:
+      values: { theme-light: "#7C5CE5", theme-dark: "#A58AF2" }
+    $color.palette.third-6:
+      values: { theme-light: "#00A6B2", theme-dark: "#43C6CF" }
+    $color.palette.third-7:
+      values: { theme-light: "#F9A80C", theme-dark: "#FBC451" }
+    $color.palette.third-8:
+      values: { theme-light: "#5F646F", theme-dark: "#AEB3BD" }
+    $color.palette.neutral-black:
+      values:
+        theme-light: "#222222"
+        theme-dark: "#F4F5F7"
+    $color.palette.neutral-dark-gray:
+      values:
+        theme-light: "#5F646F"
+        theme-dark: "#CDD0D6"
+    $color.palette.neutral-dark-middle-gray:
+      values:
+        theme-light: "#8D929C"
+        theme-dark: "#A8ADB7"
+    $color.palette.neutral-middle-gray:
+      values:
+        theme-light: "#ABB0B9"
+        theme-dark: "#777D88"
+    $color.palette.neutral-light-middle-gray:
+      values:
+        theme-light: "#E2E5EB"
+        theme-dark: "#353942"
+    $color.palette.neutral-light-gray:
+      values:
+        theme-light: "#F2F4F8"
+        theme-dark: "#292D34"
+    $color.palette.error:
+      values:
+        theme-light: "#C93B00"
+        theme-dark: "#FF7840"
+    $color.palette.error-bg:
+      values:
+        theme-light: "#FFF0EA"
+        theme-dark: "#49271D"
+    $color.palette.line-gray:
+      values:
+        theme-light: "#DCE0E7"
+        theme-dark: "#3A3F48"
+    $color.palette.caution:
+      values:
+        theme-light: "#C77D00"
+        theme-dark: "#F9C44E"
+    $color.palette.caution-bg:
+      values:
+        theme-light: "#FFF7E8"
+        theme-dark: "#40351C"
+    $color.palette.base-bg:
+      values:
+        theme-light: "#FBFBFD"
+        theme-dark: "#181B20"
+    # Figma surface/success #00BB2A는 텍스트 대비가 낮아 시맨틱 전경은 동계열 심화.
+    $color.palette.success:
+      values:
+        theme-light: "#008A20"
+        theme-dark: "#47D969"
+    $color.palette.success-bg:
+      values:
+        theme-light: "#E9F9ED"
+        theme-dark: "#1B3924"
+    # ── 시맨틱 층 (roles — 팔레트 참조, 모드 전환은 팔레트가 담당) ──
+    $color.semantic.surface:
+      values:
+        theme-light: "$color.palette.white"
+        theme-dark: "$color.palette.white"
+    $color.semantic.surface-page:
+      values:
+        theme-light: "$color.palette.base-bg"
+        theme-dark: "$color.palette.base-bg"
+    $color.semantic.fg:
+      values:
+        theme-light: "$color.palette.neutral-black"
+        theme-dark: "$color.palette.neutral-black"
+    $color.semantic.fg-muted:
+      values:
+        theme-light: "$color.palette.neutral-dark-gray"
+        theme-dark: "$color.palette.neutral-dark-gray"
+    $color.semantic.fg-subtle:
+      values:
+        theme-light: "$color.palette.neutral-dark-middle-gray"
+        theme-dark: "$color.palette.neutral-dark-middle-gray"
+    $color.semantic.line:
+      values:
+        theme-light: "$color.palette.line-gray"
+        theme-dark: "$color.palette.line-gray"
+    $color.semantic.accent:
+      values:
+        theme-light: "$color.palette.primary"
+        theme-dark: "$color.palette.primary"
+    $color.semantic.accent-bg:
+      values:
+        theme-light: "$color.palette.primary-bg"
+        theme-dark: "$color.palette.primary-bg"
+    $color.semantic.danger:
+      values:
+        theme-light: "$color.palette.error"
+        theme-dark: "$color.palette.error"
+    $color.semantic.danger-bg:
+      values:
+        theme-light: "$color.palette.error-bg"
+        theme-dark: "$color.palette.error-bg"
+    $color.semantic.success:
+      values:
+        theme-light: "$color.palette.success"
+        theme-dark: "$color.palette.success"
+    $color.semantic.success-bg:
+      values:
+        theme-light: "$color.palette.success-bg"
+        theme-dark: "$color.palette.success-bg"

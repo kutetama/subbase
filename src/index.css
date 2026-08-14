@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "./generated/tokens.css";
+
+/* 클래스 기반 다크모드 (테마 스토어가 documentElement에 .dark 토글) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 제품 tailwind.config.js screens 이식 — 데스크톱 우선 커스텀 브레이크포인트 (CardGridWrapper 등이 사용) */
+@custom-variant fhd {
+  @media (min-width: 1920px) {
+    @slot;
+  }
+}
+@custom-variant hd {
+  @media (min-width: 1440px) and (max-width: 1919px) {
+    @slot;
+  }
+}
+@custom-variant tablet {
+  @media (min-width: 1025px) and (max-width: 1439px) {
+    @slot;
+  }
+}
+@custom-variant tablet-sm {
+  @media (max-width: 1024px) {
+    @slot;
+  }
+}
+@custom-variant tablet-center {
+  @media (max-width: 1044px) {
+    @slot;
+  }
+}
+
+/* 폰트는 프리셋 토큰화됨 — @font-face·패밀리는 generated/tokens.css가 생성 (원천: rootage/presets/<프리셋>/font.yaml).
+   기본 SUIT 셀프호스팅(OFL 1.1 — assets/fonts/LICENSE.txt), 폐쇄망 대응. */
+
+/* TOAST tailwind.config.js plugins의 스크롤바 유틸리티 이식 */
+@utility scrollbar-default {
+  overflow: auto;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--tk-color-palette-line-gray);
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 3px;
+  }
+}
+
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility scrollbar-table {
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 32px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    border: 5px solid var(--tk-color-semantic-surface);
+    background-color: var(--tk-color-palette-line-gray);
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    margin: 0px 24px;
+  }
+}
+
+@layer base {
+  body {
+    font-family: var(--tk-font-family-base);
+    background-color: var(--tk-color-semantic-surface-page);
+    color: var(--tk-color-semantic-fg);
+  }
+}

@@ -1,0 +1,12 @@
+# TOAST borderRadius: lgx 10px / 2.5xl 20px / 3.75xl 30px → 시맨틱 이름으로 재명명.
+# (Tailwind v4 테마 키에 '.'이 들어갈 수 없어 원명 유지 불가 — v4 이식 결정 사항)
+kind: Tokens
+metadata:
+  id: radius
+  name: Radius
+data:
+  collection: global
+  tokens:
+    $radius.control: { values: { default: "10px" } }
+    $radius.panel: { values: { default: "20px" } }
+    $radius.card: { values: { default: "30px" } }

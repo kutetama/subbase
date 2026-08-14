@@ -1,0 +1,18 @@
+# 폰트 (apple 프리셋) — SF Pro는 사유 폰트: 체인 최상단 system-ui로 Apple 기기에서 실제 SF Pro 사용,
+# 그 외 플랫폼은 Inter 대체(문서 substitute note) + SUIT 한글 페어.
+kind: Tokens
+metadata:
+  id: font
+  name: Font (apple)
+data:
+  collection: global
+  tokens:
+    $font.family.base:
+      values:
+        default: '-apple-system, BlinkMacSystemFont, system-ui, "Inter Variable", "SUIT Variable", SUIT, sans-serif'
+    $font.face.family: { values: { default: "Inter Variable" } }
+    $font.face.src: { values: { default: "../assets/fonts/InterVariable-latin.woff2" } }
+    $font.face.weight: { values: { default: "100 900" } }
+    $font.face2.family: { values: { default: "SUIT Variable" } }
+    $font.face2.src: { values: { default: "../assets/fonts/SUIT-Variable.woff2" } }
+    $font.face2.weight: { values: { default: "100 900" } }

@@ -1,0 +1,103 @@
+# apple 프리셋 — DESIGN-apple.md 매핑 (2026-08-12): 화이트/파치먼트 캔버스 + 액션 블루 단일 액센트, 다크는 니어블랙 타일.
+# 매핑 원칙:
+#   - 라이트 = 문서 원값 (canvas #FFFFFF = 카드, parchment #F5F5F7 = 페이지, ink #1D1D1F).
+#   - 다크 = 문서의 다크 타일 팔레트(#272729·#2A2A2C·#1D1D1F·#252527)에서 구성, 액센트는 문서 명시
+#     다크 전용 블루(primary-on-dark #2997FF) 사용.
+#   - third 8색 = 문서가 단일 블루 체계라 스케일 없음 → iOS 시스템 컬러 계열에서 파생 (주석).
+#   - 상태색 = 문서 무정의(Known Gaps) → iOS 시맨틱(red·green·orange)의 텍스트용 심화 파생.
+#   - fg-subtle: 문서 ink-muted-48(#7A7A7A)은 2.9:1로 게이트(3) 미달 → #66666B 심화.
+kind: Tokens
+metadata:
+  id: color
+  name: Color (apple)
+data:
+  collection: color
+  tokens:
+    $color.palette.white:            # 카드 = canvas / 다크 = tile-1(#272729)
+      values: { theme-light: "#FFFFFF", theme-dark: "#272729" }
+    $color.palette.primary:          # Action Blue / 다크 = Sky Link Blue(문서 명시 다크 전용)
+      values: { theme-light: "#0066CC", theme-dark: "#2997FF" }
+    $color.palette.primary-dark:
+      values: { theme-light: "#004A99", theme-dark: "#6FB6FF" }
+    $color.palette.primary-light:
+      values: { theme-light: "#6FA9DC", theme-dark: "#58A2E8" }
+    $color.palette.primary-light-bg:
+      values: { theme-light: "#DCEBFA", theme-dark: "#1C3A57" }
+    $color.palette.primary-bg:
+      values: { theme-light: "#EAF2FB", theme-dark: "#22364B" }
+    $color.palette.primary-gradient-end:
+      values: { theme-light: "#338FE0", theme-dark: "#5FB0FF" }
+    $color.palette.sub:
+      values: { theme-light: "#2997FF", theme-dark: "#2997FF" }
+    # 카테고리 8색 — iOS 시스템 컬러 파생 (sky·teal·indigo·red·orange·purple·green·gray)
+    $color.palette.third-1:
+      values: { theme-light: "#32ADE6", theme-dark: "#64C8F0" }
+    $color.palette.third-2:
+      values: { theme-light: "#009D95", theme-dark: "#33C3BB" }
+    $color.palette.third-3:          # 게이트 슬롯 — indigo
+      values: { theme-light: "#5856D6", theme-dark: "#7D7AFF" }
+    $color.palette.third-4:
+      values: { theme-light: "#E02D24", theme-dark: "#FF6961" }
+    $color.palette.third-5:
+      values: { theme-light: "#AF52DE", theme-dark: "#C77DE8" }
+    $color.palette.third-6:
+      values: { theme-light: "#FF9500", theme-dark: "#FFB340" }
+    $color.palette.third-7:
+      values: { theme-light: "#2FA84F", theme-dark: "#30D158" }
+    $color.palette.third-8:          # 게이트 슬롯 — gray (systemGray 심화)
+      values: { theme-light: "#6C6C70", theme-dark: "#98989D" }
+    # 뉴트럴 — ink(#1D1D1F)·muted 계열 + hairline(#E0E0E0)
+    $color.palette.neutral-black:
+      values: { theme-light: "#1D1D1F", theme-dark: "#F5F5F7" }
+    $color.palette.neutral-dark-gray:
+      values: { theme-light: "#333336", theme-dark: "#C7C7CC" }
+    $color.palette.neutral-dark-middle-gray:  # ink-muted-48 심화(게이트)
+      values: { theme-light: "#66666B", theme-dark: "#98989D" }
+    $color.palette.neutral-middle-gray:
+      values: { theme-light: "#86868B", theme-dark: "#7C7C80" }
+    $color.palette.neutral-light-middle-gray: # hairline
+      values: { theme-light: "#E0E0E0", theme-dark: "#38383A" }
+    $color.palette.neutral-light-gray:        # 밴드 — parchment보다 한 단계 깊게 / 다크 = tile-3
+      values: { theme-light: "#EBEBED", theme-dark: "#252527" }
+    # 상태 — iOS 시맨틱 텍스트용 심화 파생
+    $color.palette.error:
+      values: { theme-light: "#D70015", theme-dark: "#FF6961" }
+    $color.palette.error-bg:
+      values: { theme-light: "#FBE8E7", theme-dark: "#452625" }
+    $color.palette.line-gray:        # 구분선 — hairline보다 깊게 (게이트 1.3)
+      values: { theme-light: "#D2D2D7", theme-dark: "#48484A" }
+    $color.palette.caution:
+      values: { theme-light: "#BF4A00", theme-dark: "#FF9F0A" }
+    $color.palette.caution-bg:
+      values: { theme-light: "#FAEFE2", theme-dark: "#3E3220" }
+    $color.palette.base-bg:          # 페이지 = parchment(#F5F5F7) / 다크 = #1D1D1F
+      values: { theme-light: "#F5F5F7", theme-dark: "#1D1D1F" }
+    $color.palette.success:
+      values: { theme-light: "#1F8137", theme-dark: "#30D158" }
+    $color.palette.success-bg:
+      values: { theme-light: "#E7F4EA", theme-dark: "#21402B" }
+    # ── 시맨틱 층 (전 프리셋 공통 참조 구조 — 파리티 필수) ──
+    $color.semantic.surface:
+      values: { theme-light: "$color.palette.white", theme-dark: "$color.palette.white" }
+    $color.semantic.surface-page:
+      values: { theme-light: "$color.palette.base-bg", theme-dark: "$color.palette.base-bg" }
+    $color.semantic.fg:
+      values: { theme-light: "$color.palette.neutral-black", theme-dark: "$color.palette.neutral-black" }
+    $color.semantic.fg-muted:
+      values: { theme-light: "$color.palette.neutral-dark-gray", theme-dark: "$color.palette.neutral-dark-gray" }
+    $color.semantic.fg-subtle:
+      values: { theme-light: "$color.palette.neutral-dark-middle-gray", theme-dark: "$color.palette.neutral-dark-middle-gray" }
+    $color.semantic.line:
+      values: { theme-light: "$color.palette.line-gray", theme-dark: "$color.palette.line-gray" }
+    $color.semantic.accent:
+      values: { theme-light: "$color.palette.primary", theme-dark: "$color.palette.primary" }
+    $color.semantic.accent-bg:
+      values: { theme-light: "$color.palette.primary-bg", theme-dark: "$color.palette.primary-bg" }
+    $color.semantic.danger:
+      values: { theme-light: "$color.palette.error", theme-dark: "$color.palette.error" }
+    $color.semantic.danger-bg:
+      values: { theme-light: "$color.palette.error-bg", theme-dark: "$color.palette.error-bg" }
+    $color.semantic.success:
+      values: { theme-light: "$color.palette.success", theme-dark: "$color.palette.success" }
+    $color.semantic.success-bg:
+      values: { theme-light: "$color.palette.success-bg", theme-dark: "$color.palette.success-bg" }

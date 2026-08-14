@@ -1,0 +1,176 @@
+# TOAST 팔레트 → rootage 형식.
+# 라이트 값 = 제품 colors.ts 원본 = 피그마 정본과 100% 일치 확인됨
+#   (2026-08-11, "Toaster 디자인 가이드" WH2d9thjmaRzmQsCCzJGXy · 프레임 2:9177 "디자인시스템" 대조).
+# 다크 값 = 자체 설계 정본 (2026-08-11 — 피그마에 다크 시트 없음 확정, 유저 결정으로 신규 설계).
+#   도출 규칙:
+#   R1 순수 흑백 금지 — 페이지 #17181B < 서피스 #1F2125 (엘리베이션 1.10:1), 본문 #E9EAEC.
+#   R2 뉴트럴은 명도 반전 + 서피스 색조(쿨)에 정렬. 대비 목표: fg ≥7:1, muted ≥4.5:1, subtle ≥3:1.
+#   R3 브랜드 유지 — primary #FF6E4D 무변경, pressed만 심화(#FF5C38), 틴트 배경은 웜 다크.
+#   R4 시맨틱은 명도 상승하되 primary와 깊이 차 유지 (error #F65238 = 4.75:1, primary 대비 1.23 분리).
+#   R5 차트(third)는 어두운 3·6·8만 리프트, 밝은 색 유지 — 시리즈 식별성 우선.
+#   R6 다크의 면 분리는 보더가 주도, 그림자는 블랙 알파 강화 (shadow.yaml).
+#   전 항목 WCAG 대비 검증 통과 (scratchpad/check-contrast.mjs, 2026-08-11).
+# hover 그림자: 시트 표기(2px 2px 10px)와 코드(0 0 10px PrimaryLight 50%)가 상이했으나
+#   **코드 값으로 확정** (2026-08-11 유저 결정 — 현재는 shadow.yaml에서 color-mix로 브랜드 자동 추종).
+kind: Tokens
+metadata:
+  id: color
+  name: Color
+data:
+  collection: color
+  tokens:
+    # ── 팔레트 층 (scale) ─────────────────────────────
+    $color.palette.white:
+      values:
+        theme-light: "#FFFFFF"
+        theme-dark: "#1F2125"
+    $color.palette.primary:
+      values:
+        theme-light: "#FF6E4D"
+        theme-dark: "#FF6E4D"
+    $color.palette.primary-dark:
+      values:
+        theme-light: "#FF4920"
+        theme-dark: "#FF5C38"
+    $color.palette.primary-light:
+      values:
+        theme-light: "#FFB3A2"
+        theme-dark: "#E09580"
+    $color.palette.primary-light-bg:
+      values:
+        theme-light: "#FFEDE6"
+        theme-dark: "#3A2A24"
+    $color.palette.primary-bg:
+      values:
+        theme-light: "#FFFAF6"
+        theme-dark: "#2B2320"
+    $color.palette.primary-gradient-end:
+      values:
+        theme-light: "#FF7E61"
+        theme-dark: "#FF7E61"
+    $color.palette.sub:
+      values:
+        theme-light: "#FFB3A2"
+        theme-dark: "#E09580"
+    $color.palette.third-1:
+      values: { theme-light: "#FFC516", theme-dark: "#FFC516" }
+    $color.palette.third-2:
+      values: { theme-light: "#16B5FF", theme-dark: "#16B5FF" }
+    $color.palette.third-3:
+      values: { theme-light: "#0A77AA", theme-dark: "#2E9CD4" }
+    $color.palette.third-4:
+      values: { theme-light: "#EE6A78", theme-dark: "#EE6A78" }
+    $color.palette.third-5:
+      values: { theme-light: "#EE8D98", theme-dark: "#EE8D98" }
+    $color.palette.third-6:
+      values: { theme-light: "#FF4920", theme-dark: "#FF6242" }
+    $color.palette.third-7:
+      values: { theme-light: "#26D4C5", theme-dark: "#26D4C5" }
+    $color.palette.third-8:
+      values: { theme-light: "#4D53FF", theme-dark: "#7A7FFF" }
+    $color.palette.neutral-black:
+      values:
+        theme-light: "#222222"
+        theme-dark: "#E9EAEC"
+    $color.palette.neutral-dark-gray:
+      values:
+        theme-light: "#555555"
+        theme-dark: "#C6C8CC"
+    $color.palette.neutral-dark-middle-gray:
+      values:
+        theme-light: "#888888"
+        theme-dark: "#9A9DA5"
+    $color.palette.neutral-middle-gray:
+      values:
+        theme-light: "#AAAAAA"
+        theme-dark: "#6B6E76"
+    $color.palette.neutral-light-middle-gray:
+      values:
+        theme-light: "#EEEEEE"
+        theme-dark: "#2E3036"
+    $color.palette.neutral-light-gray:
+      values:
+        theme-light: "#F4F4F4"
+        theme-dark: "#26282D"
+    $color.palette.error:
+      values:
+        theme-light: "#CF2600"
+        theme-dark: "#F65238"
+    $color.palette.error-bg:
+      values:
+        theme-light: "#FFEBE6"
+        theme-dark: "#3B211C"
+    $color.palette.line-gray:
+      values:
+        theme-light: "#DBDBDB"
+        theme-dark: "#383B42"
+    $color.palette.caution:
+      values:
+        theme-light: "#E6A832"
+        theme-dark: "#E9B44A"
+    $color.palette.caution-bg:
+      values:
+        theme-light: "#FCF6EA"
+        theme-dark: "#322C1E"
+    $color.palette.base-bg:
+      values:
+        theme-light: "#F8F8F8"
+        theme-dark: "#17181B"
+    # success 계열 — 가이드에 없어 신설 (2026-08-11, ML 도구 요구. AutoJudge success 그린 계승, 대비 검증 통과)
+    $color.palette.success:
+      values:
+        theme-light: "#0B7A52"
+        theme-dark: "#34C08D"
+    $color.palette.success-bg:
+      values:
+        theme-light: "#E6F6EE"
+        theme-dark: "#1E3226"
+    # ── 시맨틱 층 (roles — 팔레트 참조, 모드 전환은 팔레트가 담당) ──
+    $color.semantic.surface:
+      values:
+        theme-light: "$color.palette.white"
+        theme-dark: "$color.palette.white"
+    $color.semantic.surface-page:
+      values:
+        theme-light: "$color.palette.base-bg"
+        theme-dark: "$color.palette.base-bg"
+    $color.semantic.fg:
+      values:
+        theme-light: "$color.palette.neutral-black"
+        theme-dark: "$color.palette.neutral-black"
+    $color.semantic.fg-muted:
+      values:
+        theme-light: "$color.palette.neutral-dark-gray"
+        theme-dark: "$color.palette.neutral-dark-gray"
+    $color.semantic.fg-subtle:
+      values:
+        theme-light: "$color.palette.neutral-dark-middle-gray"
+        theme-dark: "$color.palette.neutral-dark-middle-gray"
+    $color.semantic.line:
+      values:
+        theme-light: "$color.palette.line-gray"
+        theme-dark: "$color.palette.line-gray"
+    $color.semantic.accent:
+      values:
+        theme-light: "$color.palette.primary"
+        theme-dark: "$color.palette.primary"
+    $color.semantic.accent-bg:
+      values:
+        theme-light: "$color.palette.primary-bg"
+        theme-dark: "$color.palette.primary-bg"
+    $color.semantic.danger:
+      values:
+        theme-light: "$color.palette.error"
+        theme-dark: "$color.palette.error"
+    $color.semantic.danger-bg:
+      values:
+        theme-light: "$color.palette.error-bg"
+        theme-dark: "$color.palette.error-bg"
+    $color.semantic.success:
+      values:
+        theme-light: "$color.palette.success"
+        theme-dark: "$color.palette.success"
+    $color.semantic.success-bg:
+      values:
+        theme-light: "$color.palette.success-bg"
+        theme-dark: "$color.palette.success-bg"
